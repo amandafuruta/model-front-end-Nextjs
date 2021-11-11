@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import {FontStyle} from "../styles/fonts"
 import BaseLayoutComponent from 'components/layout/base'
 import Head from "next/head";
+import "swiper/css/bundle";
 
 export default function CustomApp({ Component, pageProps }: AppProps) {
     return (

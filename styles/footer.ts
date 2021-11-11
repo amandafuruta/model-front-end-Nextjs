@@ -40,9 +40,7 @@ export const FooterStyle = styled.footer`
                         display: flex;
                         justify-content: space-between;
                         width: 100%;
-                        
                         display: flex;
-                        
 
                         a{
                             max-width: 188px;
@@ -77,5 +75,34 @@ export const FooterStyle = styled.footer`
         padding: 22px 0;   
     }
     
+    @media(max-width:800px){
+        .container{
+            .top{
+                flex-direction: column;
+                align-items: center;
+                .servicos{
+                    .op{
+                        .line{
+                            flex-direction:column;
+                            margin-bottom: 0 !important;
+                            a{
+                                margin-bottom: 36px;
+                            }
+                        }
+                    }
+                }
+                .fale_conosco{
+                    max-width: 440px;
+                    width: 100%;
+                
+                }
+            }
+        }
+    }
 
+    @media(max-width:450px){
+        .container{
+            padding: 0 15px;
+        }
+    }
 `

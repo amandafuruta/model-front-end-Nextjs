@@ -38,6 +38,48 @@ export const Section1 = styled.section`
             }
         }
     }
+
+    @media(max-width:850px){
+        .container{
+            flex-direction: column-reverse;
+            align-items: center;
+
+            .right{
+                button{
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+
+    @media(max-width:450px){
+        padding: 90px 20px 50px;
+        .container{
+            .left{
+                display: flex;
+                justify-content: center;
+                max-width: 315px;
+            }
+            .right{
+                max-width: 350px;
+
+                h1{
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    @media(max-width:375px){
+        .container{
+            .right{
+                h1, span{
+                    text-align: center;
+                }
+                
+            }
+        }
+    }
 `
 
 export const Section2= styled.section`
@@ -81,6 +123,22 @@ export const Section2= styled.section`
             margin: 0 auto 49px;
             max-width: 538px;
             text-align: center;
+        }
+    }
+
+    @media(max-width:450px){
+        .top{
+            h2{    
+                font-size: 32px;
+                max-width: 360px;
+            }
+        }
+
+        .bottom{
+            padding: 55px 20px 50px;
+            p{
+                max-width: 360px;
+            }
         }
     }
 `
@@ -153,6 +211,20 @@ export const Section3= styled.section`
             div{
                 height: 230px;
                 background-color: #076048;
+            }
+        }
+    }
+
+    @media(max-width:800px){
+        background: #f8f8f8;
+     
+        .container{
+            flex-direction: column;
+            .box1{
+                margin-bottom: 34px;
+            }
+            .box2{
+                margin-bottom: 34px;
             }
         }
     }
@@ -233,6 +305,29 @@ export const Section4= styled.section`
             }
         }
     }
+
+    @media(max-width:800px){
+        padding: 70px 20px 100px;
+
+        .container{
+            .card_container{
+                justify-content: center;
+            
+
+                .contato{
+                    flex-direction: column;
+                    max-width: 400px;
+                    p{
+                        margin: 8px 0 52px;
+                    }
+
+                    a{
+                        height: 60px;
+                    }
+                }
+            }
+        }
+    }
 `
 
 export const Section5= styled.section`
@@ -250,6 +345,16 @@ export const Section5= styled.section`
         width: 100%;
         margin: 0 auto;
         position: relative;
+
+        .title{
+            display: flex;
+            max-width: 819px;
+            margin: 0 auto;
+
+            .first{
+                margin-right: 40px;
+            }
+        }
 
         .detail{
             margin-bottom: 81px;
@@ -269,6 +374,42 @@ export const Section5= styled.section`
         h5{
             margin-top: 0;
             margin-bottom: 65px;
+        }
+
+        p{
+            line-height: 29px;
+        }
+    }
+
+    @media(max-width:970px){
+        .container{
+            max-width: 750px;
+            .title{
+                flex-direction: column;
+                .first{
+                    margin-bottom: 40px;
+                }
+            }
+            .detail2{
+                display: none;
+            }
+        }
+    }
+
+    @media(max-width:800px){
+        .container{
+            padding: 0 30px;
+        }
+    }
+
+    @media(max-width:450px){
+        padding: 39px 20px 111px;
+        .container{
+            .title{
+                .first{
+                    margin: 0;
+                }
+            }
         }
     }
 `
@@ -307,6 +448,17 @@ export const Section6= styled.section`
             }
         }
     }
+
+    @media(max-width:450px){
+        .container{
+            h4{
+                &:before{
+                    right: 42%;
+                }
+            }
+        }
+    }
+
 `
 
 export const Section7= styled.section`
@@ -356,12 +508,14 @@ export const Section7= styled.section`
 `
 
 export const Section8= styled.section`
+
     padding: 106px 20px 257px;
     background-color:#F8F8F8;
+
     .container{
         h4{
             text-align: center;
-            margin: 0 auto 70px;
+            margin: 0 auto 76px;
             padding-top: 37px;
             position: relative;
 
@@ -372,8 +526,71 @@ export const Section8= styled.section`
                 background-color: var(--primary-color);
                 position: absolute;
                 top: 0;
-                right: 49%;
+                right: 47%;
 
+            }
+        }
+
+        .depo{
+            .swiper {
+                width: 100%;
+                height: 100%;
+            }
+
+            .swiper-slide {
+                text-align: center;
+                font-size: 18px;
+                background: #F8F8F8;
+
+                /* Center slide text vertically */
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+
+                h5{        
+                    margin-top: 0;
+                    margin-bottom: 15px;
+                }
+
+                p{
+                    max-width: 468px;
+                    text-align: center;
+                }
+
+                span{
+                    margin-bottom:  40px;
+                    color: #009069;
+                }
+            }
+
+            .swiper-horizontal{
+                .swiper-pagination-bullets{
+                    bottom:0px;
+                }
+                .swiper-pagination-bullet-active{
+                    background-color:#009069;
+                }
+            }
+        }
+    }
+
+    @media(max-width:450px){
+        padding: 90px 20px 65px;
+
+        .container{
+            h4{
+                &:before{
+                    right: 44%;
+                }
             }
         }
     }

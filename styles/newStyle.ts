@@ -50,4 +50,24 @@ export const NewStyle = styled.a`
             }
         }
     }
+
+    
+    @media(max-width:530px){
+        flex-direction: column;
+        height: 400px;
+        
+        .img{
+            width: 100%;
+            height: 50%;
+            border-radius: 6px 6px 0 0;
+        }
+
+        .txt{
+            border-radius: 0 0 6px 6px;
+            height: 50%;
+            padding-right: 50px;
+        }
+    }
+
+   
 `

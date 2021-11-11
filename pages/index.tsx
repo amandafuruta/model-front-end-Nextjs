@@ -1,6 +1,15 @@
-import {Section1, Section2, Section3, Section4, Section5, Section6, Section7, Section8} from '../styles'
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, {Pagination} from 'swiper';
+import "swiper/css";
+import "swiper/css/pagination"
+
 import Cards from '../components/cards'
 import News from '../components/news'
+
+import {Section1, Section2, Section3, Section4, Section5, Section6, Section7, Section8} from '../styles'
+
+SwiperCore.use([Pagination]);
+
 
 const publicacoes = [
     {id: 1, img:"/images/p1.png", date:"12 novembro 2020", title:"Assessoria na implantação e utilização de Nota Fiscal Eletrônica.", href:''},
@@ -121,8 +130,11 @@ export default function HomePage() {
         <Section5 id="banner">
             <div className="container">
                 <img src="/images/detail.png" className="detail"/>
-                <h5 className="title1-Regular">O modo como se faz &ensp; contabilidade mudou</h5>
-                <p>Com um know-how vasto e com muito conhecimento, conseguimos atender os mais diversos tipos de clientes e necessidades. Há 20 anos no mercado, o Escritório 14 de dezembro é obcecado por soluções aos clientes e stakeholders.</p>
+                <div className="title">
+                    <h5 className="title1-Regular first">O modo como se faz</h5>
+                    <h5 className="title1-Regular">contabilidade mudou</h5>
+                </div>
+                <p className="p4-title1-Regular">Com um know-how vasto e com muito conhecimento, conseguimos atender os mais diversos tipos de clientes e necessidades. Há 20 anos no mercado, o Escritório 14 de dezembro é obcecado por soluções aos clientes e stakeholders.</p>
                 <img src="/images/detail2.png" className="detail2"/>
             </div>
         </Section5>
@@ -144,7 +156,7 @@ export default function HomePage() {
             </div>
         </Section6>
         
-        <Section7>
+        <Section7 id="clientes">
             <div className="container">
                 <h4 className="title2-Regular">Quem são nossos clientes</h4>
 
@@ -163,7 +175,24 @@ export default function HomePage() {
         <Section8>
             <div className="container">
                 <h4 className="title2-Regular">e o que eles dizem a nosso respeito</h4>
-
+                
+                <div className="depo">
+                    <Swiper pagination={true} className="mySwiper">
+                        {depoimentos.map((item) => {
+                            return(
+                                <SwiperSlide key={item.id}>
+                                    <div style={{display: 'flex', flexDirection: 'column', paddingBottom:102}}>
+                                        <h5 className="title4-Regular">{item.name}</h5>
+                                        <span className="p4-Bold">{item.position}</span>
+                                        <p className="p3-Regular">{item.text}</p>
+                                    </div>
+                                </SwiperSlide>
+                            )
+                        })}
+                    
+                    </Swiper>
+                    
+                </div>
             </div>
         </Section8>
 
