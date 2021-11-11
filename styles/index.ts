@@ -41,95 +41,37 @@ export const Section1 = styled.section`
 `
 
 export const Section2= styled.section`
-    
+    max-width: 1920px;
+    margin: 0 auto;
+
     .top{
-       height: 371px;
-       max-width:1348px;
-       width: 100%;
-       margin: 0 auto;
-       display: flex;
-       position: relative;
+        height: 345px;
+        background-image: url("/images/background.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative; 
 
-       .left{
-            width: 50%;
-            position: relative;
-            background: linear-gradient(160deg, #FFF 40%, #F8F8F8 40%);
-            position: relative;
-
-            &:after{
-                content: "";
-                position: absolute;
-                border-top: 1px solid var(--primary-color);
-                max-width: 1177px;
-                width: 114%;
-                -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                -webkit-transform: rotate(-28deg);
-                -ms-transform: rotate(-28deg);
-                -webkit-transform: rotate(-28deg);
-                -ms-transform: rotate(-28deg);
-                transform: rotate(-28.5deg);
-                -webkit-transform-origin: 0% 0%;
-                -ms-transform-origin: 0% 0%;
-                -webkit-transform-origin: 0% 0%;
-                -ms-transform-origin: 0% 0%;
-                -webkit-transform-origin: 0% 0%;
-                -ms-transform-origin: 0% 0%;
-                transform-origin: 0% 0%;
-                bottom: 0px;
-            }
-           
-       }
-
-       .right{
-            width: 50%;
-            background: linear-gradient(200deg, #FFF 40%, #F8F8F8 40%);
-            position: relative;
-            overflow: hidden;
-
-            &:after{
-                content: "";
-                position: absolute;
-                border-top: 1px solid var(--primary-color);
-                max-width: 1110px;
-                width: 111%;
-                -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                -webkit-transform: rotate(-28deg);
-                -ms-transform: rotate(-28deg);
-                -webkit-transform: rotate(25deg);
-                -ms-transform: rotate(25deg);
-                transform: rotate(25deg);
-                -webkit-transform-origin: 0% 0%;
-                -ms-transform-origin: 0% 0%;
-                -webkit-transform-origin: 0% 0%;
-                -ms-transform-origin: 0% 0%;
-                -webkit-transform-origin: 0% 0%;
-                -ms-transform-origin: 0% 0%;
-                transform-origin: 0% 0%;
-                top: 3px;
-                
-            }
-       }
-
-       .traco{
+        .traco{
            width: 64px; 
            height: 3px;
            background-color: var(--primary-color);
            position: absolute;
-           right: calc(50% - 32px);
+           right: calc(50% - 25px);
            top: 215px;
-       }
+        }
 
-       h2{
+        h2{
             position: absolute;
             max-width: 446px;
             text-align: center;
-            margin: 0;
-            right: 34%;
+            margin: 0 auto;
+            right: 0;
+            left: 0;
             bottom: 0;
-       }
+        }    
     }
+       
     
     .bottom{
         padding: 55px 20px 110px;

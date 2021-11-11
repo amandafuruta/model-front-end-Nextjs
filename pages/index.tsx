@@ -18,6 +18,12 @@ const logos = [
     {id: 7, logo:"/images/c7.png"}
 ]
 
+const depoimentos = [
+    {id: 1, name:"José Roberto Vieira", position:"CEO Móveis Brasília", text:"Nestes mais de vinte anos de história, contamos com uma equipe de colaboradores treinados, tanto no campo dos serviços de áreas exatas como no campo do desenvolvimento e relacionamento pessoal e interpessoal, tudo isso, visando ao nosso Cliente, um melhor atendimento profissional e pessoal."},
+    {id: 2, name:"José Roberto Vieira", position:"CEO Móveis Brasília", text:"Nestes mais de vinte anos de história, contamos com uma equipe de colaboradores treinados, tanto no campo dos serviços de áreas exatas como no campo do desenvolvimento e relacionamento pessoal e interpessoal, tudo isso, visando ao nosso Cliente, um melhor atendimento profissional e pessoal."},
+    {id: 3, name:"José Roberto Vieira", position:"CEO Móveis Brasília", text:"Nestes mais de vinte anos de história, contamos com uma equipe de colaboradores treinados, tanto no campo dos serviços de áreas exatas como no campo do desenvolvimento e relacionamento pessoal e interpessoal, tudo isso, visando ao nosso Cliente, um melhor atendimento profissional e pessoal."},
+]
+
 export default function HomePage() {
     return (
         <>
@@ -37,11 +43,6 @@ export default function HomePage() {
 
         <Section2 id="sobre">
             <div className="top">
-                <div className="left">
-                    
-                </div>
-                <div className="right"></div>
-
                 
                 <div className="traco"></div>
                 <h2 className="title2-Regular">Há vinte anos Construindo relações sólidas!</h2>
@@ -54,7 +55,7 @@ export default function HomePage() {
                 <p className="p3-Regular">
                 Nestes mais de vinte anos de história, contamos com uma equipe de colaboradores treinados, tanto no campo dos serviços de áreas exatas como no campo do desenvolvimento e relacionamento pessoal e interpessoal, tudo isso, visando ao nosso Cliente, um melhor atendimento profissional e pessoal.
                 </p>
-            </div>
+            </div> 
         </Section2>
 
         <Section3>
@@ -150,7 +151,7 @@ export default function HomePage() {
                 <div className="logos">
                     {logos.map((item) => {
                         return(
-                            <div>
+                            <div key={item.id}>
                                 <img src={item.logo} />
                             </div>
                         )
