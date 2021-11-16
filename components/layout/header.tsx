@@ -48,7 +48,7 @@ export default function HeaderComponent() {
     return (
         <HeaderStyle>
             <div className="container">
-                <a>
+                <a href="/">
                     <img src="/images/logoHeader.png"/>
                 </a>
 

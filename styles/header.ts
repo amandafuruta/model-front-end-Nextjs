@@ -7,6 +7,7 @@ export const HeaderStyle = styled.header`
         color: #262626;
         position: relative;
         cursor: pointer;
+        text-decoration: none;
     }
 
     #active:before{

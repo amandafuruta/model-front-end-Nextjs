@@ -3,6 +3,8 @@ import SwiperCore, {Pagination} from 'swiper';
 import "swiper/css";
 import "swiper/css/pagination"
 
+import {Link} from 'react-router-dom'
+
 import Cards from '../components/cards'
 import News from '../components/news'
 
@@ -144,14 +146,14 @@ export default function HomePage() {
                 <h4 className="title2-Regular">Nossas publicações</h4>
                 {publicacoes.map((item)=> {
                     return(
-                        
-                        <News key={item.id} url={item.href} img={item.img} date={item.date} title={item.title}/>  
-                        
+                     
+                        <News key={item.id} url={item.id} img={item.img} date={item.date} title={item.title}/>  
+                    
                     )
                 })}
                 
                 <div className="link">
-                    <a href="/news"  className="p4-Bold">Ver todas as publicações</a>
+                    <a href="/publicacoes"  className="p4-Bold">Ver todas as publicações</a>
                 </div>
             </div>
         </Section6>

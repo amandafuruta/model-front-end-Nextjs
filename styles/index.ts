@@ -128,9 +128,15 @@ export const Section2= styled.section`
 
     @media(max-width:450px){
         .top{
+            height: 300px;
+            .traco{
+                top: 150px;
+            }
+
             h2{    
                 font-size: 32px;
                 max-width: 360px;
+              
             }
         }
 
@@ -323,6 +329,18 @@ export const Section4= styled.section`
 
                     a{
                         height: 60px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media(max-width:364px){
+        .container{
+            .card_container{
+                .contato{
+                    a{
+                        text-align: center;
                     }
                 }
             }
