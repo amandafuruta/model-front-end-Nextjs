@@ -2,6 +2,10 @@ import styled from 'styled-components'
 
 export const HeaderStyle = styled.header`
     padding: 10px 0 15px;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    z-index: 2;
 
     a{
         color: #262626;
@@ -85,6 +89,7 @@ export const HeaderStyle = styled.header`
             position: absolute;
             background-color: #009069;
             right: 0;
+            top: 89px;
             max-width: 480px;
             width: 100%;
             padding: 82px 0 85px;

@@ -1,6 +1,7 @@
 import {HeaderStyle} from '../../styles/header'
 import React from 'react'
 import { AiOutlineMenu , AiOutlineClose} from "react-icons/ai";
+import Link from 'next/link'
 
 export default function HeaderComponent() {
     const [inicio, setInicio] = React.useState("active")
@@ -54,11 +55,11 @@ export default function HeaderComponent() {
 
                 <nav>
                     <ul>
-                        <li onClick={() => addClass(1)} ><a href="/" className='p4-SemiBold txt' id={inicio == "active"? inicio : ""}>Início</a></li>
-                        <li onClick={() => addClass(2)} ><a href="#sobre" className='p4-SemiBold' id={sobre == "active"? sobre : ""}>Sobre</a></li>
-                        <li onClick={() => addClass(3)}><a href="#servicos" className='p4-SemiBold' id={servicos == "active"? servicos : ""}>Serviços</a></li>
-                        <li onClick={() => addClass(4)}><a href="#publicacoes" className='p4-SemiBold' id={publicacoes == "active"? publicacoes : ""}>Publicações</a></li>
-                        <li onClick={() => addClass(5)}><a href="#clientes" className='p4-SemiBold' id={clientes == "active"? clientes : ""}>Clientes</a></li>
+                        <Link href="/"><li onClick={() => addClass(1)} ><a className='p4-SemiBold txt' id={inicio == "active"? inicio : ""}>Início</a></li></Link>
+                        <Link href="/#sobre"><li onClick={() => addClass(2)} ><a className='p4-SemiBold' id={sobre == "active"? sobre : ""}>Sobre</a></li></Link>
+                        <Link href="/#servicos"><li onClick={() => addClass(3)}><a className='p4-SemiBold' id={servicos == "active"? servicos : ""}>Serviços</a></li></Link>
+                        <Link href="/publicacoes"><li onClick={() => addClass(4)}><a className='p4-SemiBold' id={publicacoes == "active"? publicacoes : ""}>Publicações</a></li></Link>
+                        <li onClick={() => addClass(5)}><a href="/#clientes" className='p4-SemiBold' id={clientes == "active"? clientes : ""}>Clientes</a></li>
                     </ul>
                     <button className='p4-SemiBold button'>Conheça !</button>
                 </nav>
@@ -73,7 +74,7 @@ export default function HeaderComponent() {
                             <li><a className="title3-Regular" href="/" >Início</a></li>
                             <li><a className="title3-Regular" href="#sobre" >Sobre</a></li>
                             <li><a className="title3-Regular" href="#servicos">Serviços</a></li>
-                            <li><a className="title3-Regular" href="#publicacoes" >Publicações</a></li>
+                            <li><a className="title3-Regular" href="/publicacoes" >Publicações</a></li>
                             <li><a className="title3-Regular" href="#clientes" >Clientes</a></li>
                         </ul>
                     </nav>

@@ -1,25 +1,22 @@
 import { Publications } from "../../styles/publications"
 import News from '../../components/news'
-
-// import { useParams } from "react-router-dom";
-// export default function Publicacoes(props:any){
-//     const { id } = useParams();
-//     console.log("teste")
-//     return(
-//         <Publications>
-
-//         </Publications>
-//     )
-// }
-
-const publicacoes = [
-    {id: 1, img:"/images/p1.png", date:"12 novembro 2020", title:"Assessoria na implantação e utilização de Nota Fiscal Eletrônica.", href:''},
-    {id: 2, img:"/images/p2.png", date:"12 novembro 2020", title:"Assessoria na implantação e utilização de Nota Fiscal Eletrônica.", href:''},
-    {id: 3, img:"/images/p3.png", date:"12 novembro 2020", title:"Assessoria na implantação e utilização de Nota Fiscal Eletrônica.", href:''}
-]
+import {useState , useEffect} from 'react'
+import Link from 'next/link'
+import { environment } from "environment"
 
 
 export default function Publicacoes(){
+    const [noticias, setNoticiais] = useState<any[]>([])
+
+    useEffect(() => {
+        fetch( environment.apiUrl +"posts/pager").then(resp => resp.json()).
+        then((dados)=> {
+            setNoticiais(dados.data);
+            console.log(noticias);
+        });
+
+    }, [])
+
     return(
         <Publications>
             <div className="title_banner">
@@ -27,11 +24,11 @@ export default function Publicacoes(){
             </div>
 
             <div className="container">
-                {publicacoes.map((item)=> {
+                {noticias.map((item:any)=> {
                     return(
-                     
-                        <News key={item.id} url={item.id} img={item.img} date={item.date} title={item.title}/>  
-                    
+           
+                        <News key={item.id} url={item.id}  img={item.banner} date={item.date} title={item.title} location="news"/>  
+                   
                     )
                 })}
             </div>

@@ -2,6 +2,10 @@ import styled from 'styled-components'
 
 export const FooterStyle = styled.footer`
     background-color: var(--primary-color);
+
+    .content{
+        padding: 0 20px;
+    }
     
     span, a{
         color: #fff;
@@ -31,10 +35,21 @@ export const FooterStyle = styled.footer`
                 width: 100%;
                 
                 .op{
-                    
+                    flex-wrap: wrap;
                     margin-top:32px;
-                    display: flex;
-                    flex-direction: column;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+
+                    p{
+                        max-width: 190px;
+                        width: 100%;
+                        color: #fff;
+                    }
+
+                    /* p+p{
+                        margin-right: 30px;
+                    } */
+                    /* flex-direction: column;
 
                     .line{
                         display: flex;
@@ -48,7 +63,7 @@ export const FooterStyle = styled.footer`
                             line-height: 22px;
                         }
 
-                    }
+                    } */
                 }
             }
 
@@ -64,6 +79,17 @@ export const FooterStyle = styled.footer`
 
                 span{
                     line-height: 24px;
+                }
+
+                .phone, .mail{
+                    p{margin:0}
+                }
+
+                .mail{
+                    display: flex;
+                    p{    
+                        margin-left: 10px
+                    }
                 }
             }
         }
@@ -82,16 +108,11 @@ export const FooterStyle = styled.footer`
                 align-items: center;
                 .servicos{
                     .op{
-                        .line{
-                            flex-direction:column;
-                            margin-bottom: 0 !important;
-                            a{
-                                margin-bottom: 36px;
-                            }
-                        }
+                        grid-template-columns: repeat(1, 1fr);
                     }
                 }
                 .fale_conosco{
+                    margin-top: 20px;
                     max-width: 440px;
                     width: 100%;
                 
@@ -100,9 +121,4 @@ export const FooterStyle = styled.footer`
         }
     }
 
-    @media(max-width:450px){
-        .container{
-            padding: 0 15px;
-        }
-    }
 `

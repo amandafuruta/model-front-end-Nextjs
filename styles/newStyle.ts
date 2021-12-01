@@ -12,7 +12,7 @@ export const NewStyle = styled.a`
 
     .img{
         height: 100%;
-        width: 45%;
+        width: 33%;
         border-radius: 6px 0 0 6px;
     }
 
@@ -39,8 +39,8 @@ export const NewStyle = styled.a`
     }
 
     &:hover{
+        background-color: #009069;
         .txt{
-            background-color: #009069;
             p{
                 color: #fff;
             }

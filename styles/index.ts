@@ -2,7 +2,11 @@ import styled from 'styled-components'
 
 export const Section1 = styled.section`
     background-color: #FFFF;
-    padding: 100px 20px 50px;
+    padding: 189px 20px 50px;
+
+    p{
+        margin: 0;
+    }
 
     .container{
         display: flex;
@@ -26,6 +30,10 @@ export const Section1 = styled.section`
                 max-width: 331px;
                 width: 100%;
                 margin-bottom: 33px;
+
+                p{
+                    line-height: 27px;
+                }
             }
         }
 
@@ -85,6 +93,10 @@ export const Section1 = styled.section`
 export const Section2= styled.section`
     max-width: 1920px;
     margin: 0 auto;
+
+    p{
+        margin: 0;
+    }
 
     .top{
         height: 345px;
@@ -157,7 +169,9 @@ export const Section3= styled.section`
     }
 
     h3{
-        color: #AAEFAF;
+        p{
+            color: #AAEFAF;
+        }
     }
 
     p{
@@ -466,8 +480,7 @@ export const Section6= styled.section`
             }
         }
     }
-
-    @media(max-width:450px){
+    @media(max-width:600px){
         .container{
             h4{
                 &:before{
@@ -476,6 +489,7 @@ export const Section6= styled.section`
             }
         }
     }
+
 
 `
 
@@ -520,6 +534,15 @@ export const Section7= styled.section`
 
             img+img{
                 margin-left: 80px;
+            }
+        }
+    }
+    @media(max-width:600px){
+        .container{
+            h4{
+                &:before{
+                    right: 42%;
+                }
             }
         }
     }
@@ -601,6 +624,17 @@ export const Section8= styled.section`
         }
     }
 
+    @media(max-width:600px){
+        padding: 90px 20px 65px;
+        .container{
+            h4{
+                &:before{
+                    right: 42%;
+                }
+            }
+        }
+    }
+/* 
     @media(max-width:450px){
         padding: 90px 20px 65px;
 
@@ -611,5 +645,5 @@ export const Section8= styled.section`
                 }
             }
         }
-    }
+    } */
 `

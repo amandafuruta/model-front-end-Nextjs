@@ -3,6 +3,8 @@ import SwiperCore, {Pagination} from 'swiper';
 import "swiper/css";
 import "swiper/css/pagination"
 
+import {useState , useEffect} from 'react'
+
 import {Link} from 'react-router-dom'
 
 import Cards from '../components/cards'
@@ -10,39 +12,50 @@ import News from '../components/news'
 
 import {Section1, Section2, Section3, Section4, Section5, Section6, Section7, Section8} from '../styles'
 
+import {environment} from 'environment'
+
+import parser from 'html-react-parser'
+
 SwiperCore.use([Pagination]);
 
 
-const publicacoes = [
-    {id: 1, img:"/images/p1.png", date:"12 novembro 2020", title:"Assessoria na implantação e utilização de Nota Fiscal Eletrônica.", href:''},
-    {id: 2, img:"/images/p2.png", date:"12 novembro 2020", title:"Assessoria na implantação e utilização de Nota Fiscal Eletrônica.", href:''},
-    {id: 3, img:"/images/p3.png", date:"12 novembro 2020", title:"Assessoria na implantação e utilização de Nota Fiscal Eletrônica.", href:''}
-]
-
-const logos = [
-    {id: 1, logo:"/images/c1.png"},
-    {id: 2, logo:"/images/c2.png"},
-    {id: 3, logo:"/images/c3.png"},
-    {id: 4, logo:"/images/c4.png"},
-    {id: 5, logo:"/images/c5.png"},
-    {id: 6, logo:"/images/c6.png"},
-    {id: 7, logo:"/images/c7.png"}
-]
-
-const depoimentos = [
-    {id: 1, name:"José Roberto Vieira", position:"CEO Móveis Brasília", text:"Nestes mais de vinte anos de história, contamos com uma equipe de colaboradores treinados, tanto no campo dos serviços de áreas exatas como no campo do desenvolvimento e relacionamento pessoal e interpessoal, tudo isso, visando ao nosso Cliente, um melhor atendimento profissional e pessoal."},
-    {id: 2, name:"José Roberto Vieira", position:"CEO Móveis Brasília", text:"Nestes mais de vinte anos de história, contamos com uma equipe de colaboradores treinados, tanto no campo dos serviços de áreas exatas como no campo do desenvolvimento e relacionamento pessoal e interpessoal, tudo isso, visando ao nosso Cliente, um melhor atendimento profissional e pessoal."},
-    {id: 3, name:"José Roberto Vieira", position:"CEO Móveis Brasília", text:"Nestes mais de vinte anos de história, contamos com uma equipe de colaboradores treinados, tanto no campo dos serviços de áreas exatas como no campo do desenvolvimento e relacionamento pessoal e interpessoal, tudo isso, visando ao nosso Cliente, um melhor atendimento profissional e pessoal."},
-]
-
 export default function HomePage() {
+    const [noticias, setNoticiais] = useState<any[]>([])
+    const [depoimentos, setDepoimentos] = useState<any[]>([])
+    const [logos, setLogos] = useState<any[]>([])
+    const [parametros, setParametros] = useState<any>({})
+
+    useEffect(() => {
+
+        fetch(environment.apiUrl +"posts/pager?limit=3").then(resp => resp.json()).
+        then((dados)=> {
+            setNoticiais(dados.data);
+        });
+
+        fetch(environment.apiUrl +"feedbacks/pager").then(resp => resp.json()).
+        then((dados)=> {
+            setDepoimentos(dados.data);
+        });
+
+        fetch(environment.apiUrl +"customers/pager").then(resp => resp.json()).
+        then((dados)=> {
+            setLogos(dados.data);
+        });
+
+        fetch(environment.apiUrl +"parameters/list").then(resp => resp.json()).
+        then((dados)=> {
+            setParametros(dados);
+        });
+
+    }, [])
+
     return (
         <>
         <Section1 id="inicio">
             <div className="container">
                 <div className="right">
-                    <h1 className="title3-Regular">Muito mais que um <b>Escritório de Contabilidade!</b></h1>
-                    <span className="p1-Regular">Soluções completas no mundo contábil com foco exclusivo no cliente. <span className="p1-Bold" style={{color:"#009069"}}>Sempre!</span> </span>
+                    <h1 className="title3-Regular">{parametros.how_title ? parser(parametros.how_title.content) : ""}</h1>
+                    <span className="p1-Regular">{parametros.subtitle_section1 ? parser(parametros.subtitle_section1.content) : ""} </span>
                     <button className='p4-SemiBold button'>Conheça !</button>
                 </div>
 
@@ -56,15 +69,12 @@ export default function HomePage() {
             <div className="top">
                 
                 <div className="traco"></div>
-                <h2 className="title2-Regular">Há vinte anos Construindo relações sólidas!</h2>
+                <h2 className="title2-Regular">{parametros.about_title ? parser(parametros.about_title.content) : ""}</h2>
             </div>
 
             <div className="bottom">
                 <p className="p3-Regular">
-                    Nestes mais de vinte anos de história, contamos com uma equipe de colaboradores treinados, tanto no campo dos serviços de áreas exatas como no campo do desenvolvimento e relacionamento pessoal e interpessoal, tudo isso, visando ao nosso Cliente, um melhor atendimento profissional e pessoal.
-                </p>
-                <p className="p3-Regular">
-                Nestes mais de vinte anos de história, contamos com uma equipe de colaboradores treinados, tanto no campo dos serviços de áreas exatas como no campo do desenvolvimento e relacionamento pessoal e interpessoal, tudo isso, visando ao nosso Cliente, um melhor atendimento profissional e pessoal.
+                    {parametros.about_text ? parser(parametros.about_text.content) : ""}
                 </p>
             </div> 
         </Section2>
@@ -77,8 +87,8 @@ export default function HomePage() {
                     </svg>
                     
                     <div>
-                        <h3 className="title5-SemiBold">Missão</h3>
-                        <p className="p4-Regular">Nestes mais de vinte anos de história, contamos com uma equipe de colaboradores treinados,</p>
+                        <h3 className="title5-SemiBold">{parametros.box_1_ttitle ? parser(parametros.box_1_ttitle.content) : ""}</h3>
+                        <p className="p4-Regular">{parametros.box_1_subtitle ? parser(parametros.box_1_subtitle.content) : ""}</p>
                     </div>
                 </div>
 
@@ -97,8 +107,8 @@ export default function HomePage() {
                     </svg>
                     
                     <div>
-                        <h3 className="title5-SemiBold">Visão</h3>
-                        <p className="p4-Regular">Nestes mais de vinte anos de história, contamos com uma equipe de colaboradores treinados,</p>
+                        <h3 className="title5-SemiBold">{parametros.box_2_ttitle ? parser(parametros.box_2_ttitle.content) : ""}</h3>
+                        <p className="p4-Regular">{parametros.box_2_subtitle ? parser(parametros.box_2_subtitle.content) : ""}</p>
                     </div>
                 </div>
 
@@ -108,8 +118,8 @@ export default function HomePage() {
                     </svg>
                     
                     <div>
-                        <h3 className="title5-SemiBold">Missão</h3>
-                        <p className="p4-Regular">Nestes mais de vinte anos de história, contamos com uma equipe de colaboradores treinados,</p>
+                        <h3 className="title5-SemiBold">{parametros.box_3_title ? parser(parametros.box_3_title.content) : ""}</h3>
+                        <p className="p4-Regular">{parametros.box_3_subtitle ? parser(parametros.box_3_subtitle.content) : ""}</p>
                     </div>
                 </div>
 
@@ -136,7 +146,7 @@ export default function HomePage() {
                     <h5 className="title1-Regular first">O modo como se faz</h5>
                     <h5 className="title1-Regular">contabilidade mudou</h5>
                 </div>
-                <p className="p4-title1-Regular">Com um know-how vasto e com muito conhecimento, conseguimos atender os mais diversos tipos de clientes e necessidades. Há 20 anos no mercado, o Escritório 14 de dezembro é obcecado por soluções aos clientes e stakeholders.</p>
+                <p className="p4-title1-Regular">{parametros.banner_subtitle ? parser(parametros.banner_subtitle.content) : ""}</p>
                 <img src="/images/detail2.png" className="detail2"/>
             </div>
         </Section5>
@@ -144,13 +154,13 @@ export default function HomePage() {
         <Section6 id="publicacoes">
             <div className="container">
                 <h4 className="title2-Regular">Nossas publicações</h4>
-                {publicacoes.map((item)=> {
-                    return(
-                     
-                        <News key={item.id} url={item.id} img={item.img} date={item.date} title={item.title}/>  
-                    
-                    )
-                })}
+                    {noticias.map((item)=> {
+                        return(
+                        
+                            <News key={item.id} url={item.id}  img={item.banner} date={item.date} title={item.title} location="news"/>  
+                        
+                        )
+                    })}
                 
                 <div className="link">
                     <a href="/publicacoes"  className="p4-Bold">Ver todas as publicações</a>
@@ -166,7 +176,7 @@ export default function HomePage() {
                     {logos.map((item) => {
                         return(
                             <div key={item.id}>
-                                <img src={item.logo} />
+                                <img src={environment.apiUrlDownload + item.image} />
                             </div>
                         )
                     })}
@@ -185,8 +195,8 @@ export default function HomePage() {
                                 <SwiperSlide key={item.id}>
                                     <div style={{display: 'flex', flexDirection: 'column', paddingBottom:102}}>
                                         <h5 className="title4-Regular">{item.name}</h5>
-                                        <span className="p4-Bold">{item.position}</span>
-                                        <p className="p3-Regular">{item.text}</p>
+                                        <span className="p4-Bold">{item.description}</span>
+                                        <p className="p3-Regular">{item.feedback}</p>
                                     </div>
                                 </SwiperSlide>
                             )
