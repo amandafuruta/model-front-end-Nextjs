@@ -47,6 +47,26 @@ export default function HomePage() {
             setParametros(dados);
         });
 
+        setTimeout(() => {
+
+            const query = new URLSearchParams(window.location.search)
+
+            if (query.get('#clientes')) {
+                // Use the hash to find the first element with that id
+                // const element = document.querySelector(`#${query.get('cat')}`);
+                
+                // if (element) {
+                //   // Smooth scroll to that elment
+                //   element.scrollIntoView({
+                //     behavior: 'smooth',
+                //     block: 'start',
+                //     inline: 'nearest',
+                //   });
+                // }
+                console.log("oi")
+              }
+        }, 200);
+
     }, [])
 
     return (
@@ -56,7 +76,7 @@ export default function HomePage() {
                 <div className="right">
                     <h1 className="title3-Regular">{parametros.how_title ? parser(parametros.how_title.content) : ""}</h1>
                     <span className="p1-Regular">{parametros.subtitle_section1 ? parser(parametros.subtitle_section1.content) : ""} </span>
-                    <button className='p4-SemiBold button'>Conheça !</button>
+                    <a href="#sobre" className='p4-SemiBold button btnSmall hvr-grow' >Conheça !</a>
                 </div>
 
                 <div className="left">
@@ -79,7 +99,7 @@ export default function HomePage() {
             </div> 
         </Section2>
 
-        <Section3>
+        <Section3 id="visao">
             <div className="container">
                 <div className="box1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="51.104" viewBox="0 0 40 51.104">
@@ -124,6 +144,8 @@ export default function HomePage() {
                 </div>
 
             </div>
+                <a href="/publicacoes" className='p4-SemiBold button btnBig hvr-grow'>Conheça nossos cases</a>
+
         </Section3>
 
         <Section4 id="servicos">
@@ -182,6 +204,8 @@ export default function HomePage() {
                     })}
                 </div>
             </div>
+
+            <button className='p4-SemiBold button btnBig hvr-grow'>Conheça nossos cases</button>
         </Section7>
                     
         <Section8>

@@ -30,67 +30,31 @@ export const FooterStyle = styled.footer`
                 color: var(--secondary-color);
             }
 
-            .servicos{
-                max-width: 440px;
-                width: 100%;
-                
-                .op{
-                    flex-wrap: wrap;
-                    margin-top:32px;
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-
-                    p{
-                        max-width: 190px;
-                        width: 100%;
-                        color: #fff;
-                    }
-
-                    /* p+p{
-                        margin-right: 30px;
-                    } */
-                    /* flex-direction: column;
-
-                    .line{
-                        display: flex;
-                        justify-content: space-between;
-                        width: 100%;
-                        display: flex;
-
-                        a{
-                            max-width: 188px;
-                            width: 100%;
-                            line-height: 22px;
-                        }
-
-                    } */
-                }
+            p{
+                color: #fff;
+                font-style: normal;
+                line-height: 24px;
+                margin: 0;
             }
 
-            .fale_conosco{
-                address{
-                    font-style: normal;
-                    color: #fff;
-                    max-width: 196px;
-                    line-height: 21px;
-                    margin-bottom: 35px;
-                    margin-top:22px;
-                }
+            address{
+                margin-top:22px;
+            }
 
-                span{
-                    line-height: 24px;
-                }
+            .servicos{
+                max-width: 264px;
+                width: 100%;
+            }
+        }
 
-                .phone, .mail{
-                    p{margin:0}
-                }
-
-                .mail{
-                    display: flex;
-                    p{    
-                        margin-left: 10px
-                    }
-                }
+        .media{
+            margin: 30px 0;
+            .mediaBox{
+                margin: 0 auto;
+                max-width: 250px;
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
             }
         }
     }
@@ -101,21 +65,16 @@ export const FooterStyle = styled.footer`
         padding: 22px 0;   
     }
     
-    @media(max-width:800px){
+    @media(max-width: 850px){
         .container{
             .top{
                 flex-direction: column;
-                align-items: center;
-                .servicos{
-                    .op{
-                        grid-template-columns: repeat(1, 1fr);
-                    }
-                }
-                .fale_conosco{
-                    margin-top: 20px;
-                    max-width: 440px;
-                    width: 100%;
+                max-width: 300px;
+                width: 100%;
+                margin: 0 auto;
                 
+                .kalore{
+                    margin: 30px 0;
                 }
             }
         }

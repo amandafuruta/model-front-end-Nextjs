@@ -1,26 +1,39 @@
 import styled from 'styled-components'
 
 export const HeaderStyle = styled.header`
-    padding: 10px 0 15px;
+    padding: 14px 0 15px;
     position: fixed;
     width: 100%;
-    background-color: #fff;
+    background-color: var(--primary-color);
     z-index: 2;
 
     a{
-        color: #262626;
+        color: #fff;
         position: relative;
         cursor: pointer;
         text-decoration: none;
+        display: flex;
+        align-items: flex-end;
     }
-
-    #active:before{
-        content: '';
-        width: 100%;
-        height: 4px;
-        background-color: var(--primary-color);
+    
+    .sobre{
         position: absolute;
-        top: -35px;
+        background-color: var(--primary-color);
+        padding: 0;
+        right: 42%;
+        top: 79px;
+
+        ul{
+            padding: 0;
+            margin: 0;
+            li{
+                padding: 10px 44px;
+                
+                &:hover{
+                    background-color: #077658;
+                }
+            }
+        }
     }
 
     .container{
@@ -44,9 +57,6 @@ export const HeaderStyle = styled.header`
                 display: flex;
                 justify-content: space-between;
 
-                li{
-                    list-style: none;
-                }
             }
 
             
@@ -81,7 +91,7 @@ export const HeaderStyle = styled.header`
             position: absolute;
             right: 25px;
             top: 20px;
-            background-color: #fff;
+            background-color: #009069;
             border: none;
         }
 
@@ -89,10 +99,10 @@ export const HeaderStyle = styled.header`
             position: absolute;
             background-color: #009069;
             right: 0;
-            top: 89px;
+            top: 73px;
             max-width: 480px;
             width: 100%;
-            padding: 82px 0 85px;
+            padding: 50px 0 50px;
             z-index: 2;
 
             nav{
@@ -113,12 +123,14 @@ export const HeaderStyle = styled.header`
                     }
 
                     li+li{
-                        margin-top: 60px;
+                        margin-top: 40px;
                     }
                 }
             }
         }
     }
+
+    
 
     @media(max-width:450px){
         padding: 20px 0 15px;
@@ -128,7 +140,7 @@ export const HeaderStyle = styled.header`
         }
 
         .open_menu{
-            top: 35px;
+            top: 24px;
         }
     }
 

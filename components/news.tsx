@@ -12,7 +12,7 @@ export default function News(props:any):any {
             <NewStyle >
                 <div className="img" style={{backgroundImage:`url(${environment.apiUrlDownload}${props.img})`, backgroundPosition:"center", backgroundSize:"cover"}}></div>
                 
-                <div className="txt">
+                <div className="txt ">
                     <p className="p4-Regular top">{new Date(props.date).getDate() + " " + months[new Date(props.date).getMonth()] + " " +new Date(props.date).getFullYear()}</p>
                     <p className="p2-Bold">{props.title}</p>
                 </div>   

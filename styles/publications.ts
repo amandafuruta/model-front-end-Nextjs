@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Publications = styled.section`
-    padding-top: 89px;
+    padding-top: 79px;
     
     .title_banner{
         margin-bottom: 71px;

@@ -35,6 +35,13 @@ export const Section1 = styled.section`
                     line-height: 27px;
                 }
             }
+
+            a{
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
 
         .left{
@@ -162,8 +169,10 @@ export const Section2= styled.section`
 `
 
 export const Section3= styled.section`
-    background: linear-gradient(180deg, #F8F8F8 50%, #FFF 50%);
-    padding: 0 20px 131px;
+    background: linear-gradient(180deg, #F8F8F8 28%, #FFF 28%);
+    padding: 0 20px 200px;
+    text-align: center;
+
     h3, p{
         text-align: center;
     }
@@ -183,6 +192,7 @@ export const Section3= styled.section`
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-bottom: 100px;
     
         svg{
             margin-bottom: 18px;
@@ -234,6 +244,16 @@ export const Section3= styled.section`
             }
         }
     }
+
+    a{
+        text-decoration: none;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    
 
     @media(max-width:800px){
         background: #f8f8f8;
@@ -495,8 +515,10 @@ export const Section6= styled.section`
 
 export const Section7= styled.section`
     padding: 92px 20px 128px;
+    text-align: center;
 
     .container{
+        margin-bottom: 90px;
         h4{
             text-align: center;
             margin: 0 auto 70px;
@@ -549,8 +571,7 @@ export const Section7= styled.section`
 `
 
 export const Section8= styled.section`
-
-    padding: 106px 20px 257px;
+    padding: 150px 20px;
     background-color:#F8F8F8;
 
     .container{

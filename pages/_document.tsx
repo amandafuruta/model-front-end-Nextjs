@@ -18,6 +18,7 @@ export default class CustomDocument extends Document {
                         sizes="48x48"
                         href="/favicon.ico"
                     />
+                    <link href="css/hover.css" rel="stylesheet" media="all"></link>
                 </Head>
                 <body>
                     <Main />

@@ -36,6 +36,7 @@ export default function Detail(props:any){
 
             <div className="container">
                 <div className="containerNewsDetails">
+                    <img src={environment.apiUrlDownload + news.banner}/>
                     <div>
                     {parser(news.content || "")}
                     </div>
