@@ -49,21 +49,22 @@ export default function HomePage() {
 
         setTimeout(() => {
 
-            const query = new URLSearchParams(window.location.search)
-
-            if (query.get('#clientes')) {
+            const query = new URLSearchParams(window.location.hash)
+            console.log(window.location.search)
+            
+            if (window.location.hash == '#clientes') {
                 // Use the hash to find the first element with that id
-                // const element = document.querySelector(`#${query.get('cat')}`);
+                const element = document.getElementById("clientes");
                 
-                // if (element) {
-                //   // Smooth scroll to that elment
-                //   element.scrollIntoView({
-                //     behavior: 'smooth',
-                //     block: 'start',
-                //     inline: 'nearest',
-                //   });
-                // }
-                console.log("oi")
+                if (element) {
+                  // Smooth scroll to that elment
+                  element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                    inline: 'nearest',
+                  });
+                }
+                console.log("foi")
               }
         }, 200);
 
