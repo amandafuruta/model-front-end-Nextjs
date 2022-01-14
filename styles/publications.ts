@@ -58,7 +58,7 @@ export const Publications = styled.section`
         .bottom{
             h2{
                 &:before{
-                    left: 45%;
+                    left: 42%;
                 }
             }
         }
