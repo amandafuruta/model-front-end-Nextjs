@@ -71,9 +71,9 @@ export default function HeaderComponent() {
 
             <div className="sobre" style={{display: hidden? "none" : "flex"}}>
                 <ul>
-                    <Link href="/#sobre"><li><a className='p4-SemiBold'>Sobre nós</a></li></Link>
-                    <Link href="/#visao"><li><a className='p4-SemiBold'>Visão geral</a></li></Link>
-                    <Link href="/publicacoes"><li><a className='p4-SemiBold'>Cases</a></li></Link>
+                    <Link  href="/#sobre"><li><a  onClick={()=>setHidden(!hidden)}className='p4-SemiBold'>Sobre nós</a></li></Link>
+                    <Link href="/#visao"><li><a onClick={()=>setHidden(!hidden)} className='p4-SemiBold'>Visão geral</a></li></Link>
+                    <Link href="/publicacoes"><li><a onClick={()=>setHidden(!hidden)} className='p4-SemiBold'>Cases</a></li></Link>
                 </ul>
             </div>
 
@@ -85,10 +85,10 @@ export default function HeaderComponent() {
                     <nav>
                         <ul>
                             <li><a className="title3-Regular" href="/" >Início</a></li>
-                            <li><a className="title3-Regular" href="#sobre" >Sobre</a></li>
+                            <Link href="/#sobre" ><li><a className="title3-Regular" onClick={()=>setMenu(!menu)} >Sobre</a></li></Link>
                             <li><a className="title3-Regular" href="/servicos">Serviços</a></li>
                             <li><a className="title3-Regular" href="/publicacoes" >Publicações</a></li>
-                            <li><a className="title3-Regular" href="#clientes" >Clientes</a></li>
+                            <li><a className="title3-Regular" href="/#clientes" onClick={()=>setMenu(!menu)}>Clientes</a></li>
                         </ul>
                     </nav>
                 </div>

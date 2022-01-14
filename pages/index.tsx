@@ -205,7 +205,7 @@ export default function HomePage() {
                 </div>
             </div>
 
-            <button className='p4-SemiBold button btnBig hvr-grow'>Conheça nossos cases</button>
+            <a href="/publicacoes" className='p4-SemiBold button btnBig hvr-grow'>Conheça nossos cases</a>
         </Section7>
                     
         <Section8>

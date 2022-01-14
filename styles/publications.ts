@@ -25,6 +25,11 @@ export const Publications = styled.section`
         margin: 0 auto;
         padding: 0 20px;
         text-align: center;
+
+        img{
+            max-width: 400px;
+            width: 100%;
+        }
     }
 
     .bottom{

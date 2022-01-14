@@ -22,6 +22,7 @@ export const HeaderStyle = styled.header`
         padding: 0;
         right: 42%;
         top: 79px;
+        display: none;
 
         ul{
             padding: 0;

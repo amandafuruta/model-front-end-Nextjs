@@ -60,7 +60,7 @@ export const Section1 = styled.section`
             align-items: center;
 
             .right{
-                button{
+                a{
                     margin: 0 auto;
                 }
             }
@@ -516,6 +516,14 @@ export const Section6= styled.section`
 export const Section7= styled.section`
     padding: 92px 20px 128px;
     text-align: center;
+
+    a{
+        text-decoration: none;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
 
     .container{
         margin-bottom: 90px;

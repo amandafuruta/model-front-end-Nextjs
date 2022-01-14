@@ -82,7 +82,8 @@ export const ServiceStyle = styled.section`
                 background-size: cover;
                 background-position: center;
                 height: 300px;
-                width: 430px;
+                max-width: 430px;
+                width: 100%;
                 background-color: rgba(0, 59, 41, 0.4);
                 background-blend-mode: multiply;
                 margin-right: 57px;
@@ -252,6 +253,9 @@ export const ServiceStyle = styled.section`
                 flex-direction: column;
                 align-items: center;
 
+                .image{
+                    margin-right: 0;
+                }
                 .text{
                     h2{
                         max-width: unset;
