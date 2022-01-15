@@ -65,7 +65,7 @@ export default function HeaderComponent() {
                         <Link href="/publicacoes"><li><a className='p4-SemiBold' >Blog e Cases</a></li></Link>
                         <li><a href="/#clientes" className='p4-SemiBold' >Clientes</a></li>
                     </ul>
-                    <Link href="#sobre" ><button className='p4-Bold buttonWhite' style={{cursor:"pointer"}}>Conheça!</button></Link>
+                    <Link href="/#sobre" ><button className='p4-Bold buttonWhite' style={{cursor:"pointer"}}>Conheça!</button></Link>
                 </nav>
             </div>
 
